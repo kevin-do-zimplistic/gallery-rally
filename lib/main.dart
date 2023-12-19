@@ -24,7 +24,7 @@ export 'package:gallery/data/demos.dart' show pumpDeferredLibraries;
 void main() async {
   GoogleFonts.config.allowRuntimeFetching = false;
   await GetStorage.init();
-  runApp(const GalleryApp());
+  runApp(const GalleryApp(initialRoute: '/rally',));
 }
 
 class GalleryApp extends StatelessWidget {
@@ -55,7 +55,7 @@ class GalleryApp extends StatelessWidget {
           final hasHinge = MediaQuery.of(context).hinge?.bounds != null;
           return MaterialApp(
             restorationScopeId: 'rootGallery',
-            title: 'Flutter Gallery',
+            title: 'Flutter Rally',
             debugShowCheckedModeBanner: false,
             themeMode: options.themeMode,
             theme: GalleryThemeData.lightThemeData.copyWith(
